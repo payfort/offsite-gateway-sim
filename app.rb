@@ -52,11 +52,11 @@ class OffsiteGatewaySim < Sinatra::Base
   post '/execute/:action' do |action|
     ts = Time.now.utc.iso8601
     payload = {
-      'x_account_id'        => fields['x_account_id'],
-      'x_reference'         => fields['x_reference'],
-      'x_currency'          => fields['x_currency'],
+      'PSPID'        => fields['x_account_id'],
+      'ORDERID'         => fields['x_reference'],
+      'CURRENCY'          => fields['x_currency'],
       'x_test'              => fields['x_test'],
-      'x_amount'            => fields['x_amount'],
+      'AMOUNT'            => fields['x_amount'],
       'x_result'            => action,
       'x_gateway_reference' => SecureRandom.hex,
       'x_timestamp'         => ts
